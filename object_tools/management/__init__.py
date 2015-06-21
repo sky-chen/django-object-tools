@@ -31,7 +31,7 @@ def create_permissions(app, created_models, verbosity, **kwargs):
     searched_perms = list()
     # The codenames and ctypes that should exist.
     ctypes = set()
-    for model, tools in tools.iteritems():
+    for model, tools in tools.items():
         ctype = ContentType.objects.get_for_model(model)
         ctypes.add(ctype)
         for perm in _get_all_permissions(model._meta, tools):
