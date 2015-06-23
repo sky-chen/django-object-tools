@@ -56,7 +56,7 @@ def create_permissions(app, created_models, verbosity, **kwargs):
             content_type=ctype
         )
         if verbosity >= 2:
-            print "Adding permission '%s'" % p
+            print("Adding permission '%s'" % p)
 
 signals.post_syncdb.connect(create_permissions,
     dispatch_uid="object_tools.management.create_permissions")

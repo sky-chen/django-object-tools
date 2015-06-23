@@ -44,7 +44,7 @@ class ValidateTestCase(TestCase):
         )
         try:
             validate(TestInvalidTool, User)
-        except ImproperlyConfigured, e:
+        except ImproperlyConfigured as e:
             self.failUnlessEqual(
                 e.message, "No 'name' attribute found for tool TestInvalidTool."
             )
@@ -57,7 +57,7 @@ class ValidateTestCase(TestCase):
         )
         try:
             validate(TestInvalidTool, User)
-        except ImproperlyConfigured, e:
+        except ImproperlyConfigured as e:
             self.failUnlessEqual(
                 e.message,
                 "No 'label' attribute found for tool TestInvalidTool."
@@ -71,7 +71,7 @@ class ValidateTestCase(TestCase):
         )
         try:
             validate(TestInvalidTool, User)
-        except NotImplementedError, e:
+        except NotImplementedError as e:
             self.failUnlessEqual(
                 e.message, "No 'view' method found for tool TestInvalidTool."
             )
