@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
-from django.db.models import get_models
+from django.apps import apps
 
 
 class AlreadyRegistered(Exception):
@@ -42,7 +42,7 @@ class ObjectTools(object):
             #= lambda model, adminclass: None
 
         if not model_class:
-            models = get_models()
+            models = apps.get_models()
         else:
             models = [model_class, ]
 
